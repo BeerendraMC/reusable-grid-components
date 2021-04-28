@@ -1,0 +1,254 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "custom-data-grid": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/custom-data-grid",
+      "sourceRoot": "projects/custom-data-grid/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/custom-data-grid",
+            "index": "projects/custom-data-grid/src/index.html",
+            "main": "projects/custom-data-grid/src/main.ts",
+            "polyfills": "projects/custom-data-grid/src/polyfills.ts",
+            "tsConfig": "projects/custom-data-grid/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/custom-data-grid/src/favicon.ico",
+              "projects/custom-data-grid/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/custom-data-grid/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/custom-data-grid/src/environments/environment.ts",
+                  "with": "projects/custom-data-grid/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "custom-data-grid:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "custom-data-grid:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "custom-data-grid:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/custom-data-grid/src/test.ts",
+            "polyfills": "projects/custom-data-grid/src/polyfills.ts",
+            "tsConfig": "projects/custom-data-grid/tsconfig.spec.json",
+            "karmaConfig": "projects/custom-data-grid/karma.conf.js",
+            "assets": [
+              "projects/custom-data-grid/src/favicon.ico",
+              "projects/custom-data-grid/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/custom-data-grid/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/custom-data-grid/tsconfig.app.json",
+              "projects/custom-data-grid/tsconfig.spec.json",
+              "projects/custom-data-grid/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/custom-data-grid/e2e/protractor.conf.js",
+            "devServerTarget": "custom-data-grid:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "custom-data-grid:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "grid-for-server-side-interactions": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/grid-for-server-side-interactions",
+      "sourceRoot": "projects/grid-for-server-side-interactions/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/grid-for-server-side-interactions",
+            "index": "projects/grid-for-server-side-interactions/src/index.html",
+            "main": "projects/grid-for-server-side-interactions/src/main.ts",
+            "polyfills": "projects/grid-for-server-side-interactions/src/polyfills.ts",
+            "tsConfig": "projects/grid-for-server-side-interactions/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/grid-for-server-side-interactions/src/favicon.ico",
+              "projects/grid-for-server-side-interactions/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/grid-for-server-side-interactions/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/grid-for-server-side-interactions/src/environments/environment.ts",
+                  "with": "projects/grid-for-server-side-interactions/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "grid-for-server-side-interactions:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "grid-for-server-side-interactions:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "grid-for-server-side-interactions:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/grid-for-server-side-interactions/src/test.ts",
+            "polyfills": "projects/grid-for-server-side-interactions/src/polyfills.ts",
+            "tsConfig": "projects/grid-for-server-side-interactions/tsconfig.spec.json",
+            "karmaConfig": "projects/grid-for-server-side-interactions/karma.conf.js",
+            "assets": [
+              "projects/grid-for-server-side-interactions/src/favicon.ico",
+              "projects/grid-for-server-side-interactions/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/grid-for-server-side-interactions/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/grid-for-server-side-interactions/tsconfig.app.json",
+              "projects/grid-for-server-side-interactions/tsconfig.spec.json",
+              "projects/grid-for-server-side-interactions/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/grid-for-server-side-interactions/e2e/protractor.conf.js",
+            "devServerTarget": "grid-for-server-side-interactions:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "grid-for-server-side-interactions:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": false
+  },
+  "defaultProject": "custom-data-grid"
+}

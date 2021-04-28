@@ -1,0 +1,49 @@
+<div style="padding: 3%">
+  <h2 style="margin-top: 0">Reusable Custom Angular Material Grid</h2>
+  <div style="border: 1px solid rgba(0, 0, 0, 0.12)">
+    <app-custom-data-grid
+      [gridConfig]="gridConfiguration"
+      [displayedColumns]="displayedColumns"
+      [dataSource]="Employees"
+      [defaultSortColumn]="{ name: 'dob', sortDirection: 'desc' }"
+      [verticalScrollOffsetInRows]="5"
+      [searchOption]="{
+        onTwoColumns: ['name', 'dob'],
+        searchTextBoxLabel: 'Search by Name or DOB'
+      }"
+      [freezeFirstAndLastColumns]="true"
+      (linkClick)="onNameClick($event)"
+      (selectionChange)="onGenderChange($event)"
+    ></app-custom-data-grid>
+  </div>
+
+  <div style="display: flex; overflow-x: auto; padding-top: 2%">
+    <div *ngIf="selectedEmployee" style="border: 1px solid black">
+      <span>Data emitted by linkClick event:</span>
+      <pre>{{ selectedEmployee | json }}</pre>
+    </div>
+    <div *ngIf="genderChangeData" style="border: 1px solid black">
+      <span>Data emitted by selectionChange event:</span>
+      <pre>{{ genderChangeData | json }}</pre>
+    </div>
+    <div *ngIf="clickedEmployee" style="border: 1px solid black">
+      <span>Data emitted by customTemplate from {{ customTemplateColumn | uppercase }} column:</span>
+      <pre>{{ clickedEmployee | json }}</pre>
+    </div>
+  </div>
+</div>
+
+<ng-template #homeTownTemplate let-rowData>
+  <span class="home-town-container">
+    <span>{{ rowData?.homeTown?.name }}</span>
+    <a [href]="rowData?.homeTown?.link" target="_blank" (click)="onHomeTownClick(rowData)">
+      <mat-icon>launch</mat-icon>
+    </a>
+  </span>
+</ng-template>
+
+<ng-template #actionTemplate let-rowData>
+  <button mat-icon-button (click)="onActionClick(rowData)">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</ng-template>

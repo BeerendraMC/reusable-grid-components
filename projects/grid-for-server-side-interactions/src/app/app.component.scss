@@ -1,0 +1,24 @@
+.home-town-container {
+  display: flex;
+  align-items: center;
+}
+
+.home-town-container a {
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  text-decoration: none;
+  padding-left: 0.25em;
+}
+
+.mat-icon-button .mat-icon {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.home-town-container a:focus,
+.home-town-container a:active,
+.home-town-container a:hover,
+.mat-icon-button:focus .mat-icon,
+.mat-icon-button:active .mat-icon,
+.mat-icon-button:hover .mat-icon {
+  color: rgba(0, 0, 0, 0.8);
+}
