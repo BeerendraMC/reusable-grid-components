@@ -22,7 +22,6 @@
             "main": "projects/custom-data-grid/src/main.ts",
             "polyfills": "projects/custom-data-grid/src/polyfills.ts",
             "tsConfig": "projects/custom-data-grid/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/custom-data-grid/src/favicon.ico",
               "projects/custom-data-grid/src/assets"
@@ -31,7 +30,13 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/custom-data-grid/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -61,7 +66,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -144,7 +150,6 @@
             "main": "projects/grid-for-server-side-interactions/src/main.ts",
             "polyfills": "projects/grid-for-server-side-interactions/src/polyfills.ts",
             "tsConfig": "projects/grid-for-server-side-interactions/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/grid-for-server-side-interactions/src/favicon.ico",
               "projects/grid-for-server-side-interactions/src/assets"
@@ -153,7 +158,13 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/grid-for-server-side-interactions/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -183,7 +194,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
